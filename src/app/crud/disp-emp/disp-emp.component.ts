@@ -48,5 +48,7 @@ export class DispEmpComponent implements OnInit {
     })
   }
 
+  isNgClass: boolean = true;
+
 
 }

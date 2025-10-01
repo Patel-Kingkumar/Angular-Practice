@@ -1,4 +1,12 @@
 <div class="w-50">
+  <h2 [ngClass]="!isNgClass ? 'my_class1' : 'my_class2'">This is ngClass</h2>
+  <h2 [ngStyle]="{ 
+    'background-color': isNgClass ? 'yellow' : 'lightgray', 
+    'border': isNgClass ? '4px solid black' : 'none' 
+}">
+  This is ngStyle
+</h2>
+
 <table class="table">
   <thead>
     <tr>
