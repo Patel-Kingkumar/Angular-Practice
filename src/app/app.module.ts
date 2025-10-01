@@ -8,6 +8,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormArrComponent } from './reactive-form/form-arr/form-arr.component';
 import { ParentComponent } from './data-communication/parent/parent.component';
 import { ChildComponent } from './data-communication/child/child.component';
+import { AddEditEmpComponent } from './crud/add-edit-emp/add-edit-emp.component';
+import { DispEmpComponent } from './crud/disp-emp/disp-emp.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,11 +19,14 @@ import { ChildComponent } from './data-communication/child/child.component';
     FormArrComponent,
     ParentComponent,
     ChildComponent,
+    AddEditEmpComponent,
+    DispEmpComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

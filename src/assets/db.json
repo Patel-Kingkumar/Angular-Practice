@@ -1,0 +1,36 @@
+{
+  "students": [
+    {
+      "id": "81ac",
+      "firstName": "1",
+      "secondNmae": "2",
+      "lastName": "3",
+      "education": "4",
+      "job": "5"
+    },
+    {
+      "id": "bc36",
+      "firstName": "1",
+      "secondNmae": "2",
+      "lastName": "3",
+      "education": "4",
+      "job": "567"
+    },
+    {
+      "id": "7075",
+      "firstName": "1",
+      "secondNmae": "2",
+      "lastName": "3",
+      "education": "4",
+      "job": "52"
+    },
+    {
+      "firstName": "11",
+      "secondNmae": "22",
+      "lastName": "33",
+      "education": "44",
+      "job": "55",
+      "id": "17f8"
+    }
+  ]
+}

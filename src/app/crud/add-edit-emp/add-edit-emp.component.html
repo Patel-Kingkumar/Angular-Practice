@@ -1,0 +1,23 @@
+<form [formGroup]="studentForm" (ngSubmit)="submitForm()">
+    <div class="row w-25 mt-3 mx-3">
+        <div class="col-12 mt-3">
+            <input type="text" class="form-control" formControlName="firstName" placeholder="Enter First Name">
+        </div>
+        <div class="col-12 mt-3">
+            <input type="text" class="form-control" formControlName="secondNmae" placeholder="Enter Second Name">
+        </div>
+        <div class="col-12 mt-3">
+            <input type="text" class="form-control" formControlName="lastName" placeholder="Enter Last Name">
+        </div>
+        <div class="col-12 mt-3">
+            <input type="text" class="form-control" formControlName="education" placeholder="Enter Education Name">
+        </div>
+        <div class="col-12 mt-3">
+            <input type="text" class="form-control" formControlName="job" placeholder="Enter Job Name">
+        </div>
+        <div class="col-12 mt-3">
+            <button class="btn btn-primary mx-2">Submit</button>
+            <button class="btn btn-warning" [routerLink]="['/display-student']">Display</button>
+        </div>
+    </div>
+</form>
