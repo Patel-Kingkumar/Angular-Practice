@@ -15,6 +15,7 @@ import { TemplateDrivemFormComponent } from './template-drivem-form/template-dri
 import { RouteComponent } from './route/route.component';
 import { RouteOneComponent } from './route-one/route-one.component';
 import { RouteTwoComponent } from './route-two/route-two.component';
+import { TopicsComponent } from './topics/topics.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { RouteTwoComponent } from './route-two/route-two.component';
     RouteComponent,
     RouteOneComponent,
     RouteTwoComponent,
+    TopicsComponent,
   ],
   imports: [
     BrowserModule,
