@@ -12,6 +12,9 @@ import { AddEditEmpComponent } from './crud/add-edit-emp/add-edit-emp.component'
 import { DispEmpComponent } from './crud/disp-emp/disp-emp.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TemplateDrivemFormComponent } from './template-drivem-form/template-drivem-form.component';
+import { RouteComponent } from './route/route.component';
+import { RouteOneComponent } from './route-one/route-one.component';
+import { RouteTwoComponent } from './route-two/route-two.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,9 @@ import { TemplateDrivemFormComponent } from './template-drivem-form/template-dri
     AddEditEmpComponent,
     DispEmpComponent,
     TemplateDrivemFormComponent,
+    RouteComponent,
+    RouteOneComponent,
+    RouteTwoComponent,
   ],
   imports: [
     BrowserModule,

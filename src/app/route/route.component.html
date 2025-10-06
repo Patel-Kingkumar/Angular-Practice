@@ -1,0 +1,6 @@
+<ul>
+    <li [routerLink]="['/route-one']" [queryParams]="{ name: 'Patel King', education: 'MCA' }" fragment="one">route one</li>
+    <!-- <li [routerLink]="['/route-two']" [queryParams]="{ name: 'Patel Kano', education: 'MscIT' }" fragment="two">route two</li> -->
+    <li (click)="onTwo()">route two</li>
+</ul>
+<router-outlet></router-outlet>
