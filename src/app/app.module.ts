@@ -17,6 +17,7 @@ import { RouteOneComponent } from './route-one/route-one.component';
 import { RouteTwoComponent } from './route-two/route-two.component';
 import { TopicsComponent } from './topics/topics.component';
 import { TestOneComponent } from './test-one/test-one.component';
+import { TestTwoComponent } from './test-two/test-two.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { TestOneComponent } from './test-one/test-one.component';
     RouteTwoComponent,
     TopicsComponent,
     TestOneComponent,
+    TestTwoComponent,
   ],
   imports: [
     BrowserModule,
