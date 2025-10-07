@@ -1,0 +1,165 @@
+Task 1: Form with Conditional Validation (25–30 min)
+
+Requirements:
+
+Create a form with:
+
+Name (text input, required)
+
+Gender (radio button, required)
+
+Hobbies (2 checkboxes)
+
+Description (textarea)
+
+Conditional validation: Description is required if “Cricket” checkbox is selected.
+
+Display error messages under invalid fields.
+
+Expected Outcome:
+
+Form cannot submit if required fields are empty.
+
+Checkbox triggers conditional validation.
+
+Console log form value on submit.
+
+Task 2: Dynamic List with Filtering & Click Events (25–30 min)
+
+Requirements:
+
+Display a list of items (e.g., products, students, tasks) in a table or cards.
+
+Add a search/filter input to filter list items by name.
+
+Each item has a button “Select” → triggers an alert showing item details.
+
+Expected Outcome:
+
+List updates as user types in search input (use filter).
+
+Clicking button shows correct item info.
+
+Must use *ngFor and event binding.
+
+Task 3: Routing and Navigation (20–25 min)
+
+Requirements:
+
+Create 2 simple components (e.g., Home, About).
+
+Setup routing to navigate between components.
+
+Add navigation links/buttons.
+
+Bonus: pass route parameters (like id) and display in the target component.
+
+Expected Outcome:
+
+User can navigate between components via links/buttons.
+
+Route parameters display correctly.
+
+Task 4: Simple Pipe or Directive (15–20 min)
+
+Requirements:
+
+Create custom pipe: capitalize the first letter of a string.
+
+OR create a custom directive: highlight element on hover.
+
+Expected Outcome:
+
+Pipe or directive works and is reusable.
+
+Optional Task 5: Basic HTTP Request (10–15 min)
+
+Requirements:
+
+Use Angular HttpClient to fetch data from a mock API (e.g., https://jsonplaceholder.typicode.com/users
+)
+
+Display results in a table.
+
+Show a loading message while fetching.
+
+Expected Outcome:
+
+Data displays correctly.
+
+Loading indicator works.
+
+Next 5 Angular Reactive Form Practice Tasks
+1️⃣ — Dynamic Form Controls (Add/Remove Inputs)
+
+Goal:
+Create a form with a “Skills” section where the user can add or remove skill input fields dynamically.
+
+Hints:
+
+Use FormArray
+
+Example: [ "HTML", "CSS", "Angular" ]
+
+Use buttons ➕ “Add Skill” and ❌ “Remove”
+
+Learn: FormArray, dynamic control handling, DOM iteration (*ngFor).
+
+2️⃣ — Conditional Dropdown (Based on Selection)
+
+Goal:
+Show a second dropdown based on the first dropdown’s value.
+Example:
+
+Dropdown 1 → “Country”
+
+Dropdown 2 → “State” (only appears after selecting a Country)
+
+Learn: Conditional rendering, valueChanges subscription, dynamic data binding.
+
+3️⃣ — Custom Validator
+
+Goal:
+Create a form with an “Email” input that:
+
+Is required
+
+Must end with @gmail.com
+
+Hints:
+
+Write a custom validator function like gmailValidator(control: AbstractControl)
+
+Return { invalidEmail: true } if it fails.
+
+Learn: Creating and applying custom validators.
+
+4️⃣ — Cross-Field Validation
+
+Goal:
+Create a “Password” and “Confirm Password” input.
+Ensure both match before form submission.
+
+Hints:
+
+Write a custom validator at FormGroup level.
+
+Example:
+
+passwordMatchValidator(group: FormGroup) {
+  const pass = group.get('password')?.value;
+  const confirm = group.get('confirmPassword')?.value;
+  return pass === confirm ? null : { mismatch: true };
+}
+
+
+Learn: Cross-field validation, form-level validators.
+
+5️⃣ — Disable/Enable Fields Dynamically
+
+Goal:
+If checkbox “Currently Studying” is checked → disable the “End Date” input.
+If unchecked → enable it again.
+
+Learn:
+control.disable(), control.enable(), reacting to valueChanges.

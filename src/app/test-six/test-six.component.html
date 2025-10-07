@@ -1,0 +1,14 @@
+<div class="row mt-3">
+    <div class="col-3">
+        <select class="form-control" id="country" name="country" (change)="onSelected($event)">
+            <option value="" selected disabled>Select a Country</option>
+            <option *ngFor="let country of countryStateList" [ngValue]="country.country">{{ country.country }}</option>
+        </select>
+    </div>
+    <div class="col-3">
+        <select class="form-control" id="country" name="country" (change)="onSelected($event)">
+            <option value="" selected disabled>Select a State</option>
+            <option *ngFor="let state of stateList" [ngValue]="state" disabled>{{ state }}</option>
+        </select>
+    </div>
+</div>
