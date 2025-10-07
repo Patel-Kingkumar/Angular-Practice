@@ -23,6 +23,7 @@ import { TestThreeTwoComponent } from './test-three-two/test-three-two.component
 import { TestThreeComponent } from './test-three/test-three.component';
 import { FirstCapitalLetterPipe } from './first-capital-letter.pipe';
 import { TestFourComponent } from './test-four/test-four.component';
+import { TestFiveComponent } from './test-five/test-five.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { TestFourComponent } from './test-four/test-four.component';
     TestThreeComponent,
     FirstCapitalLetterPipe,
     TestFourComponent,
+    TestFiveComponent,
   ],
   imports: [
     BrowserModule,

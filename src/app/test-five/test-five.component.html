@@ -1,0 +1,28 @@
+<div *ngIf="!isDispLoader; else showLoader">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Education</th>
+      <th scope="col">Address</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone No</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of employees">
+      <th scope="row">{{ item.id }}</th>
+      <td>{{ item.name }}</td>
+      <td>{{ item.education }}</td>
+      <td>{{ item.address }}</td>
+      <td>{{ item.email }}</td>
+      <td>{{ item.phone }}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<ng-template #showLoader>
+<div class="loading"></div>
+</ng-template>
