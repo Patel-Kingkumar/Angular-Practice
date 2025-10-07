@@ -21,6 +21,8 @@ import { TestTwoComponent } from './test-two/test-two.component';
 import { TestThreeOneComponent } from './test-three-one/test-three-one.component';
 import { TestThreeTwoComponent } from './test-three-two/test-three-two.component';
 import { TestThreeComponent } from './test-three/test-three.component';
+import { FirstCapitalLetterPipe } from './first-capital-letter.pipe';
+import { TestFourComponent } from './test-four/test-four.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { TestThreeComponent } from './test-three/test-three.component';
     TestThreeOneComponent,
     TestThreeTwoComponent,
     TestThreeComponent,
+    FirstCapitalLetterPipe,
+    TestFourComponent,
   ],
   imports: [
     BrowserModule,
