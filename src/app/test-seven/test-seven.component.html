@@ -1,0 +1,9 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="emailForm">
+    <input type="text" name="email" id="email" placeholder="Enter your email" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"/><br/>
+    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+        <div *ngIf="f.email.errors.required">Email is required</div>
+        <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+    </div>
+    <p *ngIf="checkEmail">Email Already Exist</p>
+    <button>Submit</button>
+</form>

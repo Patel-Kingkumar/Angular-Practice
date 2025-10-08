@@ -25,6 +25,7 @@ import { FirstCapitalLetterPipe } from './first-capital-letter.pipe';
 import { TestFourComponent } from './test-four/test-four.component';
 import { TestFiveComponent } from './test-five/test-five.component';
 import { TestSixComponent } from './test-six/test-six.component';
+import { TestSevenComponent } from './test-seven/test-seven.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { TestSixComponent } from './test-six/test-six.component';
     TestFourComponent,
     TestFiveComponent,
     TestSixComponent,
+    TestSevenComponent,
   ],
   imports: [
     BrowserModule,
