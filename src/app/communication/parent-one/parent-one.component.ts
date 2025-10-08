@@ -11,6 +11,5 @@ export class ParentOneComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  parentData: string = "This is parent one component";
-
+  parentMessage: string = "This message is from parent component"; 
 }
