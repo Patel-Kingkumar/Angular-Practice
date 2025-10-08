@@ -1,82 +1,93 @@
 🔹 10 Parent → Child (@Input) Questions
 1️⃣ Basic String Passing
 
-Create a parent and child component.
-The parent sends a simple string like "Welcome to Angular" to the child using @Input().
-The child displays it in its template.
+Goal: Pass a simple string from parent to child.
+Parent: "Welcome to Angular"
+Child Template: Displays the message.
+Concept: Basic @Input() property binding.
 
-🧠 Concept: Basic @Input() property binding.
+2️⃣ Number Passing
 
-2️⃣ Passing a Dynamic Value
+Goal: Pass a numeric value (e.g., age = 25) from parent to child.
+Child: Shows "Your age is 25"
+Concept: Passing numbers via @Input().
 
-The parent has an input box bound with [(ngModel)].
-Whatever the user types in the parent input box should immediately update in the child component’s view.
+3️⃣ Boolean Passing
 
-🧠 Concept: Live data flow with @Input() and Angular change detection.
+Goal: Pass a boolean flag (isLoggedIn = true) to child.
+Child: Displays "Welcome back!" if true, "Please login" if false.
+Concept: Conditional rendering based on boolean input.
 
-3️⃣ Passing an Object
+4️⃣ Object Passing
 
-The parent sends an object like:
+Goal: Pass an object from parent:
 
-user = { name: 'John', age: 25 };
-
-
-The child displays the name and age from this object.
-
-🧠 Concept: Passing complex data structures through @Input().
-
-4️⃣ Passing an Array
-
-The parent sends an array of items (e.g., product list) to the child.
-The child iterates using *ngFor to display the list.
-
-🧠 Concept: Array binding and template rendering.
-
-5️⃣ Passing Multiple Inputs
-
-The child has multiple @Input() properties like title, description, and author.
-The parent provides all values and the child displays them.
-
-🧠 Concept: Multiple @Input() properties.
-
-6️⃣ Using @Input() Setter
-
-Use a setter with @Input() to modify incoming data.
-For example, when parent passes "angular", the child automatically converts it to uppercase before displaying.
-
-🧠 Concept: @Input() set propertyName(value: string) usage.
-
-7️⃣ Conditional Display Based on Input
-
-The parent passes a boolean value showMessage.
-The child shows or hides a paragraph depending on this value.
-
-🧠 Concept: Conditional rendering (*ngIf) with @Input().
-
-8️⃣ Passing Functions via @Input()
-
-Pass a callback function from the parent to the child (e.g., logMessage()).
-The child calls this function when a certain event occurs (like ngOnInit()).
-
-🧠 Concept: Function reference passed via @Input().
-
-9️⃣ Using ngOnChanges() with @Input()
-
-In the child, use ngOnChanges() to detect when the parent’s input data changes.
-Log the previous and current values to the console.
-
-🧠 Concept: Lifecycle hook reacting to @Input() updates.
-
-🔟 Passing Nested Object
-
-The parent sends a deeply nested object like:
-
-profile = { name: 'Alex', address: { city: 'Delhi', zip: 110001 } };
+user = { name: 'John', email: 'john@example.com' }
 
 
-The child displays both name and city.
+Child: Displays Name: John, Email: john@example.com.
+Concept: Passing complex objects with @Input().
 
-🧠 Concept: Accessing nested object properties passed via @Input().
+5️⃣ Array Passing
+
+Goal: Pass an array of strings from parent:
+
+fruits = ['Apple', 'Banana', 'Mango']
+
+
+Child: Uses *ngFor to display the list.
+Concept: Passing arrays and looping in child component.
+
+6️⃣ Multiple Inputs
+
+Goal: Pass multiple inputs:
+
+title = "Angular Tutorial"; author = "King Patel"
+
+
+Child Template: "Angular Tutorial by King Patel"
+Concept: Handling multiple @Input() properties in one child.
+
+7️⃣ Dynamic Class / Styling
+
+Goal: Pass a color string from parent:
+
+color = 'blue'
+
+
+Child: Uses [ngStyle] or [style.color] to set text color.
+Concept: Dynamic styling with @Input().
+
+8️⃣ Nested Object
+
+Goal: Pass a nested object:
+
+post = { title: 'Angular', author: { name: 'King', email: 'king@gmail.com' } }
+
+
+Child: Displays "Angular by King"
+Concept: Access nested object properties via @Input().
+
+9️⃣ Event-Triggered Data
+
+Goal: Parent passes a string that changes on a button click.
+
+Parent has a button: "Update Message"
+
+Updates message = "Updated by parent"
+
+Child automatically reflects new message.
+Concept: Data binding updates child dynamically when parent changes.
+
+🔟 Conditional Data Display
+
+Goal: Parent passes an object with a status property:
+
+task = { title: 'Write tests', completed: true }
+
+
+Child: Shows "Task completed" if true, "Task pending" if false.
+Concept: Conditional rendering based on parent input.
 
 --------------------------------------------------
 
@@ -88,74 +99,3 @@ Parent listens and displays the message.
 
 🧠 Concept: Basic @Output() and event binding.
 
-2️⃣ Emitting Dynamic Input Value
-
-Child has an input field.
-Whenever the value changes, it emits the updated value to the parent automatically (no button).
-
-🧠 Concept: Real-time data emission using EventEmitter.
-
-3️⃣ Emitting Object
-
-Child emits a user object { id:1, name:'John' } to parent.
-Parent displays the object properties.
-
-🧠 Concept: Sending structured data via @Output().
-
-4️⃣ Emitting Array
-
-Child emits an array of items ['Angular','React','Vue'].
-Parent receives it and displays the list using *ngFor.
-
-🧠 Concept: Passing arrays between components.
-
-5️⃣ Automatic Emit on ngOnInit
-
-Child emits a message automatically when it initializes (ngOnInit).
-Parent displays the message immediately on page load.
-
-🧠 Concept: Lifecycle hook + EventEmitter.
-
-6️⃣ Multiple Outputs
-
-Child has two outputs:
-
-@Output() sendMessage (string)
-
-@Output() sendNumber (number)
-Parent listens to both events.
-
-🧠 Concept: Multiple event emitters from one child component.
-
-7️⃣ Emit Value After Some Action
-
-Child emits a value after performing a calculation or timeout (e.g., after 3 seconds).
-Parent updates UI once received.
-
-🧠 Concept: Async EventEmitter + setTimeout.
-
-8️⃣ Emit Event on Hover or Other DOM Event
-
-Child emits data when a mouseover or click occurs on an element.
-Parent reacts immediately.
-
-🧠 Concept: EventEmitter tied to DOM events.
-
-9️⃣ Emit Nested Object
-
-Child emits a nested object:
-
-{ user: { name: 'Alex', address: { city: 'Delhi' } } }
-
-
-Parent accesses name and city.
-
-🧠 Concept: Passing complex structured data via EventEmitter.
-
-🔟 Two-Way Communication Simulation
-
-Child receives a value from parent via @Input().
-Child modifies it and emits the updated value back via @Output().
-Parent updates its own value with the emitted data.
-
-🧠 Concept: Combined @Input + @Output for two-way interaction.

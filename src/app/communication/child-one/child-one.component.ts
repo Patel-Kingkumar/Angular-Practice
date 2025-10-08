@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-child-one',
   templateUrl: './child-one.component.html',
   styleUrls: ['./child-one.component.scss']
 })
-export class ChildOneComponent {
+export class ChildOneComponent implements OnInit {
 
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  @Input() childData: any;
 }

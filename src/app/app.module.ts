@@ -28,8 +28,8 @@ import { TestSixComponent } from './test-six/test-six.component';
 import { TestSevenComponent } from './test-seven/test-seven.component';
 import { MummyPapaComponent } from './data-passing/mummy-papa/mummy-papa.component';
 import { ChhokroComponent } from './data-passing/chhokro/chhokro.component';
+import { ParentOneComponent } from './communication/parent-one/parent-one.component';
 import { ChildOneComponent } from './communication/child-one/child-one.component';
-import { ChildTwoComponent } from './communication/child-two/child-two.component';
 
 @NgModule({
   declarations: [
@@ -57,8 +57,8 @@ import { ChildTwoComponent } from './communication/child-two/child-two.component
     TestSevenComponent,
     MummyPapaComponent,
     ChhokroComponent,
+    ParentOneComponent,
     ChildOneComponent,
-    ChildTwoComponent,
   ],
   imports: [
     BrowserModule,
