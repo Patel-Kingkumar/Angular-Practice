@@ -11,5 +11,8 @@ export class ParentOneComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  parentMessage: string = "This message is from parent component"; 
+  users = [
+  { name: 'Alice', age: 25 },
+  { name: 'Bob', age: 30 }
+]
 }

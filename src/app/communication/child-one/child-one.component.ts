@@ -11,5 +11,6 @@ export class ChildOneComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  @Input() receiveMsg: any
+  @Input() childObject: any
+
 }

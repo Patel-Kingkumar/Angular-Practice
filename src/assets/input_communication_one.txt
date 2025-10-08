@@ -1,0 +1,121 @@
+1️⃣ Passing a List of Objects
+
+Goal: Parent sends a list of users:
+
+users = [
+  { name: 'Alice', age: 25 },
+  { name: 'Bob', age: 30 }
+]
+
+
+Child: Displays each user in a table with *ngFor.
+Concept: Looping complex objects in child.
+
+2️⃣ Filtered Display
+
+Goal: Parent sends a list of products:
+
+products = [
+  { name: 'Laptop', price: 800 },
+  { name: 'Phone', price: 500 }
+]
+
+
+Child: Only display products with price > 600.
+Concept: Child applies logic to display filtered data.
+
+3️⃣ Pass Object with Array
+
+Goal: Parent sends an object with nested array:
+
+user = { name: 'John', skills: ['Angular', 'JS', 'CSS'] }
+
+
+Child: Displays name and a list of skills using *ngFor.
+Concept: Handling nested data structures.
+
+4️⃣ Dynamic Styles & Classes
+
+Goal: Parent sends:
+
+style = { color: 'red', fontSize: '20px' }
+
+
+Child: Applies [ngStyle] to display text with dynamic styles.
+Concept: Passing style objects and dynamic UI rendering.
+
+5️⃣ Conditional Template
+
+Goal: Parent sends:
+
+user = { name: 'Alice', isAdmin: true }
+
+
+Child:
+
+If isAdmin → shows “Admin Panel” button
+
+Else → shows “View Profile” button
+Concept: Conditional templates based on input.
+
+6️⃣ Passing Function
+
+Goal: Parent sends a function to child:
+
+sayHello(name: string) { alert('Hello ' + name); }
+
+
+Child: Calls sayHello('Child') on button click.
+Concept: Passing functions as input for dynamic actions.
+
+7️⃣ Input with Default Value
+
+Goal: Parent may or may not pass a value:
+
+message = "Hi!" // optional
+
+
+Child: Uses @Input() message = 'Default Message'; if parent does not send anything.
+Concept: Default values for @Input().
+
+8️⃣ Two-Way Binding via Input + Output
+
+Goal: Parent sends a counter value.
+Child:
+
+Shows counter
+
+Has +1 button to increase counter
+
+Sends new value back to parent using @Output()
+Concept: Combined @Input() + @Output() for dynamic updates.
+
+9️⃣ Input Changes Tracking (ngOnChanges)
+
+Goal: Parent changes a value dynamically:
+
+message = "First Message"
+
+
+Child: Detects changes using ngOnChanges() and logs old/new value.
+Concept: Lifecycle hook with @Input().
+
+🔟 Passing Multiple Related Objects
+
+Goal: Parent sends:
+
+order = {
+  id: 101,
+  customer: { name: 'John', email: 'john@example.com' },
+  items: [{ name: 'Laptop', qty: 1 }, { name: 'Mouse', qty: 2 }]
+}
+
+
+Child:
+
+Displays customer name
+
+Displays items in a table with qty
+
+Shows total items count
+Concept: Handling complex object structure in child.
