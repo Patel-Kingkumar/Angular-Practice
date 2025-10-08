@@ -26,6 +26,10 @@ import { TestFourComponent } from './test-four/test-four.component';
 import { TestFiveComponent } from './test-five/test-five.component';
 import { TestSixComponent } from './test-six/test-six.component';
 import { TestSevenComponent } from './test-seven/test-seven.component';
+import { MummyPapaComponent } from './data-passing/mummy-papa/mummy-papa.component';
+import { ChhokroComponent } from './data-passing/chhokro/chhokro.component';
+import { ChildOneComponent } from './communication/child-one/child-one.component';
+import { ChildTwoComponent } from './communication/child-two/child-two.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +55,10 @@ import { TestSevenComponent } from './test-seven/test-seven.component';
     TestFiveComponent,
     TestSixComponent,
     TestSevenComponent,
+    MummyPapaComponent,
+    ChhokroComponent,
+    ChildOneComponent,
+    ChildTwoComponent,
   ],
   imports: [
     BrowserModule,

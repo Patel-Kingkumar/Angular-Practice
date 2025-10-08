@@ -1,165 +1,161 @@
-Task 1: Form with Conditional Validation (25–30 min)
+🔹 10 Parent → Child (@Input) Questions
+1️⃣ Basic String Passing
 
-Requirements:
+Create a parent and child component.
+The parent sends a simple string like "Welcome to Angular" to the child using @Input().
+The child displays it in its template.
 
-Create a form with:
+🧠 Concept: Basic @Input() property binding.
 
-Name (text input, required)
+2️⃣ Passing a Dynamic Value
 
-Gender (radio button, required)
+The parent has an input box bound with [(ngModel)].
+Whatever the user types in the parent input box should immediately update in the child component’s view.
 
-Hobbies (2 checkboxes)
+🧠 Concept: Live data flow with @Input() and Angular change detection.
 
-Description (textarea)
+3️⃣ Passing an Object
 
-Conditional validation: Description is required if “Cricket” checkbox is selected.
+The parent sends an object like:
 
-Display error messages under invalid fields.
+user = { name: 'John', age: 25 };
 
-Expected Outcome:
 
-Form cannot submit if required fields are empty.
+The child displays the name and age from this object.
 
-Checkbox triggers conditional validation.
+🧠 Concept: Passing complex data structures through @Input().
 
-Console log form value on submit.
+4️⃣ Passing an Array
 
-Task 2: Dynamic List with Filtering & Click Events (25–30 min)
+The parent sends an array of items (e.g., product list) to the child.
+The child iterates using *ngFor to display the list.
 
-Requirements:
+🧠 Concept: Array binding and template rendering.
 
-Display a list of items (e.g., products, students, tasks) in a table or cards.
+5️⃣ Passing Multiple Inputs
 
-Add a search/filter input to filter list items by name.
+The child has multiple @Input() properties like title, description, and author.
+The parent provides all values and the child displays them.
 
-Each item has a button “Select” → triggers an alert showing item details.
+🧠 Concept: Multiple @Input() properties.
 
-Expected Outcome:
+6️⃣ Using @Input() Setter
 
-List updates as user types in search input (use filter).
+Use a setter with @Input() to modify incoming data.
+For example, when parent passes "angular", the child automatically converts it to uppercase before displaying.
 
-Clicking button shows correct item info.
+🧠 Concept: @Input() set propertyName(value: string) usage.
 
-Must use *ngFor and event binding.
+7️⃣ Conditional Display Based on Input
 
-Task 3: Routing and Navigation (20–25 min)
+The parent passes a boolean value showMessage.
+The child shows or hides a paragraph depending on this value.
 
-Requirements:
+🧠 Concept: Conditional rendering (*ngIf) with @Input().
 
-Create 2 simple components (e.g., Home, About).
+8️⃣ Passing Functions via @Input()
 
-Setup routing to navigate between components.
+Pass a callback function from the parent to the child (e.g., logMessage()).
+The child calls this function when a certain event occurs (like ngOnInit()).
 
-Add navigation links/buttons.
+🧠 Concept: Function reference passed via @Input().
 
-Bonus: pass route parameters (like id) and display in the target component.
+9️⃣ Using ngOnChanges() with @Input()
 
-Expected Outcome:
+In the child, use ngOnChanges() to detect when the parent’s input data changes.
+Log the previous and current values to the console.
 
-User can navigate between components via links/buttons.
+🧠 Concept: Lifecycle hook reacting to @Input() updates.
 
-Route parameters display correctly.
+🔟 Passing Nested Object
 
-Task 4: Simple Pipe or Directive (15–20 min)
+The parent sends a deeply nested object like:
 
-Requirements:
+profile = { name: 'Alex', address: { city: 'Delhi', zip: 110001 } };
 
-Create custom pipe: capitalize the first letter of a string.
 
-OR create a custom directive: highlight element on hover.
+The child displays both name and city.
 
-Expected Outcome:
+🧠 Concept: Accessing nested object properties passed via @Input().
 
-Pipe or directive works and is reusable.
+--------------------------------------------------
 
-Optional Task 5: Basic HTTP Request (10–15 min)
+🔹 10 Child → Parent (@Output) Questions
+1️⃣ Basic EventEmitter
 
-Requirements:
+Child component emits a simple string "Hello Parent!".
+Parent listens and displays the message.
 
-Use Angular HttpClient to fetch data from a mock API (e.g., https://jsonplaceholder.typicode.com/users
-)
+🧠 Concept: Basic @Output() and event binding.
 
-Display results in a table.
+2️⃣ Emitting Dynamic Input Value
 
-Show a loading message while fetching.
+Child has an input field.
+Whenever the value changes, it emits the updated value to the parent automatically (no button).
 
-Expected Outcome:
+🧠 Concept: Real-time data emission using EventEmitter.
 
-Data displays correctly.
+3️⃣ Emitting Object
 
-Loading indicator works.
+Child emits a user object { id:1, name:'John' } to parent.
+Parent displays the object properties.
 
-Next 5 Angular Reactive Form Practice Tasks
-1️⃣ — Dynamic Form Controls (Add/Remove Inputs)
+🧠 Concept: Sending structured data via @Output().
 
-Goal:
-Create a form with a “Skills” section where the user can add or remove skill input fields dynamically.
+4️⃣ Emitting Array
 
-Hints:
+Child emits an array of items ['Angular','React','Vue'].
+Parent receives it and displays the list using *ngFor.
 
-Use FormArray
+🧠 Concept: Passing arrays between components.
 
-Example: [ "HTML", "CSS", "Angular" ]
+5️⃣ Automatic Emit on ngOnInit
 
-Use buttons ➕ “Add Skill” and ❌ “Remove”
+Child emits a message automatically when it initializes (ngOnInit).
+Parent displays the message immediately on page load.
 
-Learn: FormArray, dynamic control handling, DOM iteration (*ngFor).
+🧠 Concept: Lifecycle hook + EventEmitter.
 
-2️⃣ — Conditional Dropdown (Based on Selection)
+6️⃣ Multiple Outputs
 
-Goal:
-Show a second dropdown based on the first dropdown’s value.
-Example:
+Child has two outputs:
 
-Dropdown 1 → “Country”
+@Output() sendMessage (string)
 
-Dropdown 2 → “State” (only appears after selecting a Country)
+@Output() sendNumber (number)
+Parent listens to both events.
 
-Learn: Conditional rendering, valueChanges subscription, dynamic data binding.
+🧠 Concept: Multiple event emitters from one child component.
 
-3️⃣ — Custom Validator
+7️⃣ Emit Value After Some Action
 
-Goal:
-Create a form with an “Email” input that:
+Child emits a value after performing a calculation or timeout (e.g., after 3 seconds).
+Parent updates UI once received.
 
-Is required
+🧠 Concept: Async EventEmitter + setTimeout.
 
-Must end with @gmail.com
+8️⃣ Emit Event on Hover or Other DOM Event
 
-Hints:
+Child emits data when a mouseover or click occurs on an element.
+Parent reacts immediately.
 
-Write a custom validator function like gmailValidator(control: AbstractControl)
+🧠 Concept: EventEmitter tied to DOM events.
 
-Return { invalidEmail: true } if it fails.
+9️⃣ Emit Nested Object
 
-Learn: Creating and applying custom validators.
+Child emits a nested object:
 
-4️⃣ — Cross-Field Validation
+{ user: { name: 'Alex', address: { city: 'Delhi' } } }
 
-Goal:
-Create a “Password” and “Confirm Password” input.
-Ensure both match before form submission.
 
-Hints:
+Parent accesses name and city.
 
-Write a custom validator at FormGroup level.
+🧠 Concept: Passing complex structured data via EventEmitter.
 
-Example:
+🔟 Two-Way Communication Simulation
 
-passwordMatchValidator(group: FormGroup) {
-  const pass = group.get('password')?.value;
-  const confirm = group.get('confirmPassword')?.value;
-  return pass === confirm ? null : { mismatch: true };
-}
+Child receives a value from parent via @Input().
+Child modifies it and emits the updated value back via @Output().
+Parent updates its own value with the emitted data.
 
-
-Learn: Cross-field validation, form-level validators.
-
-5️⃣ — Disable/Enable Fields Dynamically
-
-Goal:
-If checkbox “Currently Studying” is checked → disable the “End Date” input.
-If unchecked → enable it again.
-
-Learn:
-control.disable(), control.enable(), reacting to valueChanges.
+🧠 Concept: Combined @Input + @Output for two-way interaction.
