@@ -1,1 +1,2 @@
-<app-child-one [childCounter]="counter"></app-child-one>
+<app-child-one (sendMessage)="receiveMessage($event)"></app-child-one>
+<p>Message from Child: {{ messageFromChild }}</p>
