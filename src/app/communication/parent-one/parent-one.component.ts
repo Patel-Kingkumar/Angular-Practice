@@ -11,8 +11,5 @@ export class ParentOneComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  users = [
-  { name: 'Alice', age: 25 },
-  { name: 'Bob', age: 30 }
-]
+  counter: number = 0;
 }

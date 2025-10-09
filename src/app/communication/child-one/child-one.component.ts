@@ -11,6 +11,10 @@ export class ChildOneComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  @Input() childObject: any
 
+  @Input() childCounter!: number;
+
+  increment() {
+    this.childCounter++;
+  }
 }

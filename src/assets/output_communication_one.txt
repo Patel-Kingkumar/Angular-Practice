@@ -1,0 +1,145 @@
+1️⃣ Send Click Event to Parent
+
+Goal: Child has a button → on click, it emits an event to the parent.
+Concept: Basic event emission from child.
+
+// child.component.ts
+@Output() clicked = new EventEmitter<void>();
+onClick() {
+  this.clicked.emit();
+}
+
+// child.component.html
+<button (click)="onClick()">Click Me</button>
+
+<!-- parent.component.html -->
+<app-child (clicked)="onChildClicked()"></app-child>
+
+2️⃣ Send Data from Child to Parent
+
+Goal: Child emits user input (like name) to the parent.
+Concept: Passing data upward.
+
+// child.component.ts
+@Output() nameEntered = new EventEmitter<string>();
+sendName() {
+  this.nameEntered.emit(this.userName);
+}
+
+<input [(ngModel)]="userName">
+<button (click)="sendName()">Send</button>
+
+<!-- parent -->
+<app-child (nameEntered)="receiveName($event)"></app-child>
+
+3️⃣ Child Sends Selected Item
+
+Goal: Child displays a list and sends the selected one to the parent.
+Concept: Emitting selected object.
+
+// child.component.ts
+@Output() selected = new EventEmitter<any>();
+selectItem(item: any) {
+  this.selected.emit(item);
+}
+
+<div *ngFor="let item of items" (click)="selectItem(item)">
+  {{ item.name }}
+</div>
+
+4️⃣ Emit Boolean State (Toggle)
+
+Goal: Child toggles ON/OFF → notifies parent.
+Concept: Emit boolean value on toggle.
+
+@Output() toggled = new EventEmitter<boolean>();
+isOn = false;
+
+toggle() {
+  this.isOn = !this.isOn;
+  this.toggled.emit(this.isOn);
+}
+
+<button (click)="toggle()">{{ isOn ? 'ON' : 'OFF' }}</button>
+
+5️⃣ Form Submit Event
+
+Goal: Child has a small form and emits entered data on submit.
+Concept: Emit object via @Output().
+
+@Output() formSubmitted = new EventEmitter<{ name: string; age: number }>();
+submitForm() {
+  this.formSubmitted.emit({ name: this.name, age: this.age });
+}
+
+6️⃣ Emit Delete Event
+
+Goal: Child has delete buttons for each item. Emits which item to delete.
+Concept: Communicate user action upward.
+
+@Output() deleteItem = new EventEmitter<number>();
+remove(id: number) {
+  this.deleteItem.emit(id);
+}
+
+<div *ngFor="let item of items">
+  {{ item.name }}
+  <button (click)="remove(item.id)">Delete</button>
+</div>
+
+7️⃣ Two-Way Binding (Counter Example)
+
+Goal: Child shows counter, emits new value when increased.
+Concept: Combine @Input() + @Output().
+
+@Input() counter = 0;
+@Output() counterChange = new EventEmitter<number>();
+
+increment() {
+  this.counter++;
+  this.counterChange.emit(this.counter);
+}
+
+<button (click)="increment()">+1</button>
+<span>{{ counter }}</span>
+
+<!-- parent -->
+<app-child [(counter)]="count"></app-child>
+
+8️⃣ Emit Validation Result
+
+Goal: Child validates input and emits whether it’s valid.
+Concept: Logic in child, result to parent.
+
+@Output() validStatus = new EventEmitter<boolean>();
+check(value: string) {
+  this.validStatus.emit(value.length > 3);
+}
+
+9️⃣ Emit Value Change Continuously
+
+Goal: Child input emits every time user types.
+Concept: Real-time communication via (input).
+
+@Output() valueChanged = new EventEmitter<string>();
+onInput(event: any) {
+  this.valueChanged.emit(event.target.value);
+}
+
+<input (input)="onInput($event)" placeholder="Type something">
+
+🔟 Emit Nested Action (Like Add to Cart)
+
+Goal: Child card emits selected product to parent.
+Concept: Send complex object.
+
+@Output() addToCart = new EventEmitter<{ name: string; price: number }>();
+
+add(product: any) {
+  this.addToCart.emit(product);
+}
+
+<div *ngFor="let product of products">
+  {{ product.name }} - {{ product.price }}
+  <button (click)="add(product)">Add to Cart</button>
+</div>
