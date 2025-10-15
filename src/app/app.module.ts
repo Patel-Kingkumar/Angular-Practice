@@ -30,6 +30,7 @@ import { MummyPapaComponent } from './data-passing/mummy-papa/mummy-papa.compone
 import { ChhokroComponent } from './data-passing/chhokro/chhokro.component';
 import { ParentOneComponent } from './communication/parent-one/parent-one.component';
 import { ChildOneComponent } from './communication/child-one/child-one.component';
+import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { ChildOneComponent } from './communication/child-one/child-one.component
     ChhokroComponent,
     ParentOneComponent,
     ChildOneComponent,
+    TicTacToeComponent,
   ],
   imports: [
     BrowserModule,
