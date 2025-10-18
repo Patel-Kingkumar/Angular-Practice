@@ -31,6 +31,7 @@ import { ChhokroComponent } from './data-passing/chhokro/chhokro.component';
 import { ParentOneComponent } from './communication/parent-one/parent-one.component';
 import { ChildOneComponent } from './communication/child-one/child-one.component';
 import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
+import { SimpleFormarrayComponent } from './simple-formarray/simple-formarray.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
     ParentOneComponent,
     ChildOneComponent,
     TicTacToeComponent,
+    SimpleFormarrayComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,12 @@
+<div [formGroup]="orderGroup">
+    <div formArrayName="items">
+        <div *ngFor="let item of orderGroup.get('items').controls; let i = index" [formGroupName]="i">
+            <input formControlName="name" type="text" placeholder="Name">
+            <input formControlName="description" type="text" placeholder="Description">
+            <input formControlName="price" type="text" placeholder="Price">
+            <button (click)="removeItem(i)">Remove Item</button>
+        </div>
+    </div>
+</div>
+<button (click)="addItem()">Add Item</button>
+<button (click)="submit()">Submit Order</button>
