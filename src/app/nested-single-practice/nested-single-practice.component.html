@@ -1,0 +1,15 @@
+<div [formGroup]="employee">
+    <input formControlName="name" placeholder="Name"/>
+    <div formArrayName="address">
+        <div *ngFor="let item of employee?.get('address')?.controls; let i = index">
+            <div [formGroupName]="i">
+                <input formControlName="street" placeholder="Street"/>
+                <input formControlName="city" placeholder="City"/>
+                <input formControlName="state" placeholder="State"/>
+                <input formControlName="zip" placeholder="Zip"/>
+                <button (click)="removeAddress(i)">Remove Address</button>
+            </div>
+        </div>
+    </div>
+</div>
+<button (click)="addAddress()">Add Address</button>
