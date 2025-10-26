@@ -1,0 +1,35 @@
+<div class="calculator">
+  <div class="display">
+    <div class="expression">{{ expression }}</div>
+    <div class="result">{{ result }}</div>
+  </div>
+
+  <div class="keys">
+    <button class="key clear" (click)="onClear()">C</button>
+    <button class="key" (click)="onBack()">⌫</button>
+    <button class="key" (click)="onPress('%')">%</button>
+    <button class="key operator" (click)="onPress('/')">÷</button>
+
+    <button class="key" (click)="onPress('7')">7</button>
+    <button class="key" (click)="onPress('8')">8</button>
+    <button class="key" (click)="onPress('9')">9</button>
+    <button class="key operator" (click)="onPress('*')">×</button>
+
+    <button class="key" (click)="onPress('4')">4</button>
+    <button class="key" (click)="onPress('5')">5</button>
+    <button class="key" (click)="onPress('6')">6</button>
+    <button class="key operator" (click)="onPress('-')">−</button>
+
+    <button class="key" (click)="onPress('1')">1</button>
+    <button class="key" (click)="onPress('2')">2</button>
+    <button class="key" (click)="onPress('3')">3</button>
+    <button class="key operator" (click)="onPress('+')">+</button>
+
+    <button class="key" (click)="onPress('(')">(</button>
+    <button class="key" (click)="onPress('0')">0</button>
+    <button class="key" (click)="onPress(')')">)</button>
+    <button class="key" (click)="onPress('.')">.</button>
+
+    <button class="key wide operator" (click)="onEqual()">=</button>
+  </div>
+</div>

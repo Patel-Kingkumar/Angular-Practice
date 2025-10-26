@@ -33,6 +33,7 @@ import { ChildOneComponent } from './communication/child-one/child-one.component
 import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
 import { SimpleFormarrayComponent } from './simple-formarray/simple-formarray.component';
 import { NestedSinglePracticeComponent } from './nested-single-practice/nested-single-practice.component';
+import { CalculaterComponent } from './calculater/calculater.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { NestedSinglePracticeComponent } from './nested-single-practice/nested-s
     TicTacToeComponent,
     SimpleFormarrayComponent,
     NestedSinglePracticeComponent,
+    CalculaterComponent,
   ],
   imports: [
     BrowserModule,
