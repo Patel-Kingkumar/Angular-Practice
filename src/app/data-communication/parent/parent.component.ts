@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class ParentComponent {
 
-  parentMessage: string = 'Hello Child! This is data from Parent.';
+  parentMessage = "This is parent message";
 
   constructor() { }
 }

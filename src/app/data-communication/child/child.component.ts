@@ -7,8 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ChildComponent {
 
-  @Input() message!: string; // Receive data from parent
-
+  @Input() childMessage!: string;
   constructor() { }
 }
 
