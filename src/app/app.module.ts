@@ -34,6 +34,7 @@ import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
 import { SimpleFormarrayComponent } from './simple-formarray/simple-formarray.component';
 import { NestedSinglePracticeComponent } from './nested-single-practice/nested-single-practice.component';
 import { CalculaterComponent } from './calculater/calculater.component';
+import { SwitchComponent } from './switch/switch.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { CalculaterComponent } from './calculater/calculater.component';
     SimpleFormarrayComponent,
     NestedSinglePracticeComponent,
     CalculaterComponent,
+    SwitchComponent,
   ],
   imports: [
     BrowserModule,
