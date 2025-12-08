@@ -36,6 +36,7 @@ import { NestedSinglePracticeComponent } from './nested-single-practice/nested-s
 import { CalculaterComponent } from './calculater/calculater.component';
 import { SwitchComponent } from './switch/switch.component';
 import { ReactiveOneComponent } from './reactive-one/reactive-one.component';
+import { ReactiveTwoComponent } from './reactive-two/reactive-two.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { ReactiveOneComponent } from './reactive-one/reactive-one.component';
     CalculaterComponent,
     SwitchComponent,
     ReactiveOneComponent,
+    ReactiveTwoComponent
   ],
   imports: [
     BrowserModule,

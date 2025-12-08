@@ -1,0 +1,16 @@
+<div>
+    <form [formGroup]="registrationForm">
+        <input type="text" formControlName="name" placeholder="Enter Name"><br /><br />
+        <input type="text" formControlName="gender" placeholder="Enter Gender"><br /><br />
+        <input type="text" formControlName="dob" placeholder="Enter DOB"><br /><br />
+        <div formGroupName="account">
+            <input type="text" formControlName="username" placeholder="Enter User Name"><br /><br />
+            <input type="password" formControlName="password" placeholder="Enter Password"><br /><br />
+            <input type="password" formControlName="confirmPassword" placeholder="Enter Confirm Password"><br /><br />
+            <div class="text-danger" *ngIf="!isPasswordMatch && isSubmit">
+                Pasword is not match
+            </div>
+        </div>
+        <button (click)="submitRegForm()" [disabled]="registrationForm.invalid">Submit</button>
+    </form>
+</div>
