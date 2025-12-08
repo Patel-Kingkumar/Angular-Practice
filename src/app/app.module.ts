@@ -35,6 +35,7 @@ import { SimpleFormarrayComponent } from './simple-formarray/simple-formarray.co
 import { NestedSinglePracticeComponent } from './nested-single-practice/nested-single-practice.component';
 import { CalculaterComponent } from './calculater/calculater.component';
 import { SwitchComponent } from './switch/switch.component';
+import { ReactiveOneComponent } from './reactive-one/reactive-one.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { SwitchComponent } from './switch/switch.component';
     NestedSinglePracticeComponent,
     CalculaterComponent,
     SwitchComponent,
+    ReactiveOneComponent,
   ],
   imports: [
     BrowserModule,

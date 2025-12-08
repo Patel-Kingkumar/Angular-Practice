@@ -1,0 +1,24 @@
+<div>
+    <form [formGroup]="studentForm" (ngSubmit)="submitForm()">
+        <input type="text" formControlName="name" placeholder="Enter Name"><br /><br />
+        <input type="text" formControlName="email" placeholder="Enter Email"><br /><br />
+        <div
+            *ngIf="studentForm.get('email')?.invalid && (studentForm.get('email')?.dirty || studentForm.get('email')?.touched)">
+            <p class="text-danger" *ngIf="studentForm.get('email')?.errors?.email">Please enter a valid email address.
+            </p>
+        </div>
+        <input type="text" formControlName="age" placeholder="Enter Age"><br />
+        <div class="text-danger" *ngIf="f.age.errors">
+            Invalid Age Range - (18-60)
+        </div><br />
+        <textarea formControlName="address" placeholder="Enter Address"></textarea><br /><br />
+        <div formArrayName="phone" *ngFor="let item of studentForm.get('phone').controls; let i = index;">
+            <div [formGroupName]="i">
+                <input formControlName="phone" placeholder="Enter Phone Number">
+            </div>
+        </div>
+        
+        <button>Submit</button>
+    </form>
+    <button (click)="addPhone()">Add</button>
+</div>
