@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { debounceTime, distinctUntilChanged } from 'rxjs';
 
 @Component({
   selector: 'app-reactive-two',
@@ -30,7 +31,25 @@ export class ReactiveTwoComponent implements OnInit {
 
   ngOnInit(): void { 
     this.initRegForm();
+    this.onFormChanges();
   }
+
+  // onFormChanges() {
+  // this.registrationForm.get('account.username')?.valueChanges
+  //   .subscribe((value: any) => console.log(value));
+  // }
+
+  onFormChanges() {
+  this.registrationForm
+    .get('account.username')
+    ?.valueChanges.pipe(
+      debounceTime(400),          // wait 400ms after typing stops
+      distinctUntilChanged()       // only emit if value actually changed
+    )
+    .subscribe((value: any) => {
+      console.log('Debounced Username:', value);
+    });
+}
 
   initRegForm() {
     this.registrationForm = new FormGroup({
