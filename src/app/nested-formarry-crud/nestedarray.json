@@ -1,0 +1,42 @@
+{
+  "employee": [
+    {
+      "id": "14a7",
+      "employees": [
+        {
+          "firstName": "King",
+          "lastName": "Patel",
+          "skills": [
+            {
+              "skill": "Angular",
+              "exp": "1.5"
+            },
+            {
+              "skill": "React Js",
+              "exp": "2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "184e",
+      "employees": [
+        {
+          "firstName": "Kano",
+          "lastName": "Patel",
+          "skills": [
+            {
+              "skill": "Java",
+              "exp": "1"
+            },
+            {
+              "skill": "Pythn",
+              "exp": "2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
