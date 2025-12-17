@@ -7,7 +7,6 @@ import { RouteTwoComponent } from './route-two/route-two.component';
 import { TestThreeOneComponent } from './test-three-one/test-three-one.component';
 import { TestThreeTwoComponent } from './test-three-two/test-three-two.component';
 import { AddEditPageComponent } from './nested-formarry-crud/add-edit-page/add-edit-page.component';
-import { DisplayPageComponent } from './nested-formarry-crud/display-page/display-page.component';
 
 const routes: Routes = [
   { path: 'add-student', component: AddEditEmpComponent },
@@ -20,7 +19,6 @@ const routes: Routes = [
   { path: 'three-two/:id', component: TestThreeTwoComponent },
   { path: 'add-page', component: AddEditPageComponent },
   { path: 'add-page/:id', component: AddEditPageComponent },
-  { path: 'display-page', component: DisplayPageComponent }
 ];
 
 @NgModule({

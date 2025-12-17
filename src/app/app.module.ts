@@ -38,7 +38,6 @@ import { SwitchComponent } from './switch/switch.component';
 import { ReactiveOneComponent } from './reactive-one/reactive-one.component';
 import { ReactiveTwoComponent } from './reactive-two/reactive-two.component';
 import { AddEditPageComponent } from './nested-formarry-crud/add-edit-page/add-edit-page.component';
-import { DisplayPageComponent } from './nested-formarry-crud/display-page/display-page.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +75,6 @@ import { DisplayPageComponent } from './nested-formarry-crud/display-page/displa
     ReactiveOneComponent,
     ReactiveTwoComponent,
     AddEditPageComponent,
-    DisplayPageComponent
   ],
   imports: [
     BrowserModule,

@@ -26,6 +26,8 @@ export class AddEditPageComponent {
     this.empForm = this.fb.group({
       employees: this.fb.array([]),
     });
+
+    this.getAllEmployees();
   }
 
   employees(): FormArray {
@@ -94,5 +96,12 @@ export class AddEditPageComponent {
       });
     }
     console.log('form  : ', this.empForm.value);
+  }
+
+  allEmployees: any = "";
+  getAllEmployees() {
+    this.nestedFormArrayService.getemployees().subscribe((data) => {
+      this.allEmployees = data;
+    });
   }
 }
