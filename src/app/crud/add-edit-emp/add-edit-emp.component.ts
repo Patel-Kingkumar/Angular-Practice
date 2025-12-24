@@ -7,10 +7,9 @@ import { CrudService } from '../crud.service';
 @Component({
   selector: 'app-add-edit-emp',
   templateUrl: './add-edit-emp.component.html',
-  styleUrls: ['./add-edit-emp.component.scss']
+  styleUrls: ['./add-edit-emp.component.scss'],
 })
 export class AddEditEmpComponent implements OnInit {
-
   studentForm: FormGroup | any;
 
   constructor(
@@ -18,35 +17,45 @@ export class AddEditEmpComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private crudService: CrudService
-  ) { 
+  ) {
     this.initStudentForm();
   }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
     var sId = this.route.snapshot.paramMap.get('id');
     this.getById(sId);
-   }
+    this.valChanges();
+  }
 
-   getById(studentId: any) {
+  valChanges() {
+    this.studentForm.get('firstName').valueChanges.subscribe((val: any) => {
+      console.log('val  : ', val);
+    });
+
+    this.studentForm.get('firstName')?.statusChanges.subscribe((status: any) => {
+      console.log('status  : ', status);
+    });
+  }
+  getById(studentId: any) {
     this.crudService.getStudentsById(studentId).subscribe({
       next: (res) => {
-        console.log("res  : ", res);
+        console.log('res  : ', res);
         this.fillStudentData(res);
       },
       error: (err) => {},
-      complete: () => {}
-    })
-   }
+      complete: () => {},
+    });
+  }
 
-   fillStudentData(data: any) {
+  fillStudentData(data: any) {
     this.studentForm.patchValue({
       firstName: data.firstName,
       secondNmae: data.secondNmae,
       lastName: data.lastName,
       education: data.education,
-      job: data.job 
+      job: data.job,
     });
-   }
+  }
 
   initStudentForm() {
     this.studentForm = this.fb.group({
@@ -54,35 +63,34 @@ export class AddEditEmpComponent implements OnInit {
       secondNmae: [''],
       lastName: [''],
       education: [''],
-      job: ['']
+      job: [''],
     });
   }
 
- submitForm() {
-  console.log("id  : ", this.route.snapshot.paramMap.get('id'));
-  var studentId = this.route.snapshot.paramMap.get('id');
+  submitForm() {
+    console.log('id  : ', this.route.snapshot.paramMap.get('id'));
+    var studentId = this.route.snapshot.paramMap.get('id');
 
-  if(studentId != null) { 
-    this.crudService.editStudents(studentId, this.studentForm.value).subscribe({
-      next: (res) => {
-        console.log("res  : ", res);
-      },
-      error: (err) => {},
-      complete: () => {}  
-    })
-  } else {
-
-    
-    this.crudService.addStudents(this.studentForm.value).subscribe({
-      next: (res) => {
-        console.log("res  : ", res);
-      },
-      error: (err) => {},
-      complete: () => {}
-    })
-    // this.router.navigate(['/display-student']);
+    if (studentId != null) {
+      this.crudService
+        .editStudents(studentId, this.studentForm.value)
+        .subscribe({
+          next: (res) => {
+            console.log('res  : ', res);
+          },
+          error: (err) => {},
+          complete: () => {},
+        });
+    } else {
+      this.crudService.addStudents(this.studentForm.value).subscribe({
+        next: (res) => {
+          console.log('res  : ', res);
+        },
+        error: (err) => {},
+        complete: () => {},
+      });
+      // this.router.navigate(['/display-student']);
+    }
+    console.log('form  : ', this.studentForm.value);
   }
-    console.log("form  : ", this.studentForm.value);
-  }
-
 }

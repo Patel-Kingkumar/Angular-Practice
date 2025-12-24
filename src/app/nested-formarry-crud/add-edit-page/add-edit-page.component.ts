@@ -78,7 +78,6 @@ export class AddEditPageComponent {
         .subscribe({
           next: (res) => {
             console.log('res  : ', res);
-            this.router.navigate(['/display-page']);
           },
           error: (err) => {},
           complete: () => {
@@ -88,7 +87,6 @@ export class AddEditPageComponent {
       this.nestedFormArrayService.addemployees(this.empForm.value).subscribe({
         next: (res) => {
           console.log('res  : ', res);
-          this.router.navigate(['/display-page']);
         },
         error: (err) => {},
         complete: () => {
