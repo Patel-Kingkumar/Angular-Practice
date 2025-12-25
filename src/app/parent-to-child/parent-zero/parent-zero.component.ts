@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
 })
 export class ParentZeroComponent {
 
-  parentMsg = "I'm your parent"
+  msg: any;
+
+  onChildMessage(data: any) {
+    this.msg = data;
+  }
 }
