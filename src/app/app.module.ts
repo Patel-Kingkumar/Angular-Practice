@@ -39,6 +39,8 @@ import { ReactiveOneComponent } from './reactive-one/reactive-one.component';
 import { ReactiveTwoComponent } from './reactive-two/reactive-two.component';
 import { AddEditPageComponent } from './nested-formarry-crud/add-edit-page/add-edit-page.component';
 import { RxjsOprComponent } from './rxjs-opr/rxjs-opr.component';
+import { ParentZeroComponent } from './parent-to-child/parent-zero/parent-zero.component';
+import { ChildZeroComponent } from './parent-to-child/child-zero/child-zero.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +79,8 @@ import { RxjsOprComponent } from './rxjs-opr/rxjs-opr.component';
     ReactiveTwoComponent,
     AddEditPageComponent,
     RxjsOprComponent,
+    ParentZeroComponent,
+    ChildZeroComponent,
   ],
   imports: [
     BrowserModule,
