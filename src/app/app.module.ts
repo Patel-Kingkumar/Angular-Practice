@@ -41,6 +41,7 @@ import { AddEditPageComponent } from './nested-formarry-crud/add-edit-page/add-e
 import { RxjsOprComponent } from './rxjs-opr/rxjs-opr.component';
 import { ParentZeroComponent } from './parent-to-child/parent-zero/parent-zero.component';
 import { ChildZeroComponent } from './parent-to-child/child-zero/child-zero.component';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -87,7 +88,8 @@ import { ChildZeroComponent } from './parent-to-child/child-zero/child-zero.comp
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({}, {})
   ],
   providers: [],
   bootstrap: [AppComponent]
