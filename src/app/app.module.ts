@@ -42,6 +42,8 @@ import { RxjsOprComponent } from './rxjs-opr/rxjs-opr.component';
 import { ParentZeroComponent } from './parent-to-child/parent-zero/parent-zero.component';
 import { ChildZeroComponent } from './parent-to-child/child-zero/child-zero.component';
 import { StoreModule } from '@ngrx/store';
+import { CounterComponent } from './state-management/counter/counter.component';
+import { counterReducer } from './state-management/counter/counter.reducer';
 
 @NgModule({
   declarations: [
@@ -82,6 +84,7 @@ import { StoreModule } from '@ngrx/store';
     RxjsOprComponent,
     ParentZeroComponent,
     ChildZeroComponent,
+    CounterComponent,
   ],
   imports: [
     BrowserModule,
@@ -89,7 +92,9 @@ import { StoreModule } from '@ngrx/store';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot({
+      counter: counterReducer
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
