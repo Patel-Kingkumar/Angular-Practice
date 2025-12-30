@@ -44,6 +44,8 @@ import { ChildZeroComponent } from './parent-to-child/child-zero/child-zero.comp
 import { StoreModule } from '@ngrx/store';
 import { CounterComponent } from './state-management/counter/counter.component';
 import { counterReducer } from './state-management/counter/counter.reducer';
+import { ParentParentComponent } from './data-send-receive/parent-parent/parent-parent.component';
+import { ChildChildComponent } from './data-send-receive/child-child/child-child.component';
 
 @NgModule({
   declarations: [
@@ -85,6 +87,8 @@ import { counterReducer } from './state-management/counter/counter.reducer';
     ParentZeroComponent,
     ChildZeroComponent,
     CounterComponent,
+    ParentParentComponent,
+    ChildChildComponent,
   ],
   imports: [
     BrowserModule,
