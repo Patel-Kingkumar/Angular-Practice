@@ -46,6 +46,8 @@ import { CounterComponent } from './state-management/counter/counter.component';
 import { counterReducer } from './state-management/counter/counter.reducer';
 import { ParentParentComponent } from './data-send-receive/parent-parent/parent-parent.component';
 import { ChildChildComponent } from './data-send-receive/child-child/child-child.component';
+import { SliblingAComponent } from './sibling-communication/slibling-a/slibling-a.component';
+import { SliblingBComponent } from './sibling-communication/slibling-b/slibling-b.component';
 
 @NgModule({
   declarations: [
@@ -89,6 +91,8 @@ import { ChildChildComponent } from './data-send-receive/child-child/child-child
     CounterComponent,
     ParentParentComponent,
     ChildChildComponent,
+    SliblingAComponent,
+    SliblingBComponent,
   ],
   imports: [
     BrowserModule,
